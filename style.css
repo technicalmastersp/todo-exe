@@ -1,0 +1,12 @@
+#inputBox{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+#todoInput{
+    width: 65%;
+}
+#addTodoBtn{
+    width: 32%;
+    margin-left: 2px;
+}

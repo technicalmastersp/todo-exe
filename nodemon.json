@@ -1,0 +1,12 @@
+{
+    "execMap": {
+        "js": "electron"
+    },
+    "watch": [
+        "main.js",
+        "renderer.js",
+        "index.html",
+        "style.css"
+    ],
+    "ext": "js,json,html,css"
+}
