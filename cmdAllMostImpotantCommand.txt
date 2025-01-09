@@ -1,4 +1,0 @@
-
-** This command is for generate exe files
-
-=>  npx electron-packager . my-todo-app --platform=win32 --arch=x64
