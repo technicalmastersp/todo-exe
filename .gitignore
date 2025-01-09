@@ -1,0 +1,44 @@
+# Node.js dependencies
+/node_modules/
+
+# Logs
+*.log
+
+# Electron build output
+/dist/
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+# Local configuration files
+.idea/
+.vscode/
+
+# Temporary files
+*.swp
+*.swo
+
+# Ignore the todoList.json if you don't want to track it in Git
+todoList.json
+
+# Electron build files (if you are building the app for distribution)
+*.asar
+*.exe
+*.dmg
+
+# Miscellaneous
+npm-debug.log
+yarn-debug.log
+yarn-error.log
+
+# Other files
+package-lock.json
+
+
+# EXE files bundled
+/my-todo-app-win32-x64/
+
+
+# this file is only for the reference of the command
+/cmdAllMostImpotantCommand/
