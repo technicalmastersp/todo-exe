@@ -1,5 +1,6 @@
-const { app, BrowserWindow } = require("electron");
+const { app, BrowserWindow, ipcMain } = require("electron");
 const path = require("path");
+const fs = require("fs");
 
 let win;
 function createWindow() {
@@ -11,6 +12,7 @@ function createWindow() {
     maxHeight: 450,
     webPreferences: {
       nodeIntegration: true,
+      preload: path.join(__dirname, 'preload.js')
     },
     alwaysOnTop: true,
     focusable: true,
@@ -18,8 +20,9 @@ function createWindow() {
     maximizable: false,
     icon: path.join(__dirname, "icon.png"),
   });
-
-  win.loadFile("index.html");
+  
+  win.setMenu(null); // Disable the default menu bar
+  win.loadURL("file://" + path.join(__dirname, "index.html"));
 
   win.on("focus", () => {
     win.setOpacity(1); //When the app is focused, make it fully visible (100%)
@@ -31,10 +34,45 @@ function createWindow() {
   });
 }
 
-app.whenReady().then(createWindow);
+app.whenReady().then(() => {
+    createWindow();
+
+    // Quit when all windows are closed (except macOS)
+    app.on('activate', () => {
+        if (BrowserWindow.getAllWindows().length === 0) {
+            createWindow();
+        }
+    });
+});
 
 app.on("window-all-closed", () => {
   if (process.platform !== "darwin") {
     app.quit();
   }
+});
+
+// Read tasks from JSON file
+ipcMain.handle('load-tasks', () => {
+    const filePath = path.join(__dirname, 'todoList.json');
+    try {
+        if (fs.existsSync(filePath)) {
+            const data = fs.readFileSync(filePath, 'utf-8');
+            return JSON.parse(data);
+        } else {
+            return [];
+        }
+    } catch (error) {
+        console.error("Error reading tasks:", error);
+        return [];
+    }
+});
+
+// Save tasks to JSON file
+ipcMain.handle('save-tasks', (event, tasks) => {
+    const filePath = path.join(__dirname, 'todoList.json');
+    try {
+        fs.writeFileSync(filePath, JSON.stringify(tasks, null, 2)); // Pretty print JSON with indentation
+    } catch (error) {
+        console.error("Error saving tasks:", error);
+    }
 });
