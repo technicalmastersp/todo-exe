@@ -3,8 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>TechnicalMasterSP</title>
+  <title>To Do | TechnicalMasterSP</title>
   <link rel="stylesheet" href="style.css">
+  <link rel="shortcut icon" href="./assets/fevicon/fevicon.png" type="image/x-icon">
 </head>
 <body>
  <header>
@@ -18,13 +19,24 @@
 </header>
 <main>
   <div class="main-content">
+    <h1 class="todo-title">To Do List</h1>
       <div class="todo-container">
-          <h1 class="todo-title">To Do List</h1>
-          <input class="todo-input" type="text" id="taskInput"  placeholder="Add a new task">
-          <input class="todo-input" type="datetime-local" id="taskDate">
-          <button id="addTaskButton" class="todo-button">Add Task</button>
-          <ul id="taskList" class="todo-list"></ul>
+          <div class="div1">
+            <!-- <input class="todo-input inputBox" type="text-aria" id="taskInput" autofocus placeholder="Add a new task"> -->
+            <!-- <textarea hidden id="story" name="story" rows="5" cols="33">
+              It was a dark and stormy night...
+              </textarea> -->
+            <textarea class="todo-input inputBox" id="taskInput" autofocus placeholder="Add a new task" rows="3" cols="33"></textarea>
+          </div>
+          <div class="div2">
+            <input class="todo-input dateTime" type="datetime-local" id="taskDate">
+            <button id="addTaskButton" class="todo-button">Add Task</button>
+          </div>
+          <!-- <input class="todo-input inputBox" type="text" id="taskInput" autofocus placeholder="Add a new task">
+          <input class="todo-input dateTime" type="datetime-local" id="taskDate">
+          <button id="addTaskButton" class="todo-button">Add Task</button> -->
       </div>
+      <ul id="taskList" class="todo-list"></ul>
   </div>
 </main>
 <footer></footer>

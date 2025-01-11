@@ -1,13 +1,13 @@
 {
   "name": "todo-exe",
   "version": "1.0.0",
-  "description": "This application is created by @technicalmastersp [ Mr. Shashank Shekhar Pandey ].",
+  "description": "Developer : Mr. Shashank S Pandey [ @technicalmastersp ]",
   "main": "main.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "electron .",
     "dev": "nodemon main.js",
-    "pack": "electron-packager . --platform=win32 --arch=x64 --icon=./resources/icon.ico",
+    "pack": "electron-packager . --platform=win32 --arch=x64 --icon=./assets/fevicon/fevicon.png",
     "build": "electron-builder"
   },
   "keywords": [],

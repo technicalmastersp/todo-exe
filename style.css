@@ -12,7 +12,7 @@
     color: #ff6347;
     font-weight: 800;
     font-family: monospace;
-    font-size: 1.25rem;
+    font-size: 1rem;
 }
 
 .nav-link {
@@ -29,33 +29,37 @@
     color: #ffc252;
 }
 
-.main-content {
-    padding: 0px;
+.todo-title {
+    font-weight: 800;
+    font-size: 1.25rem;
+    font-family: serif;
+    text-align: center;
+    color: #0000ff;
+    margin: 5px 0;
 }
 
 .todo-container {
-    padding: 10px;
+    padding: 0 5px;
     max-width: 600px;
     margin: 0 auto;
     background-color: white;
     border-radius: 8px;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
     justify-content: center;
+    column-gap: 10px;
 }
-
-.todo-title {
-    font-weight: 800;
-    font-size: 1.5rem;
-    font-family: serif;
-    text-align: center;
-    color: #0000ff;
+.todo-container .div2 {
+    width: 70px !important;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    row-gap: 5px;
 }
-
 .todo-input {
-    padding: 15px;
-    margin: 15px 0;
+    padding: 5px;
     border: 2px solid #ccc;
     border-radius: 5px;
     width: 100%;
@@ -67,15 +71,19 @@
     outline: none;
 }
 
+textarea{
+    resize: none;
+    padding: 7px !important;
+}
 .todo-button {
-    padding: 15px;
+    padding: 5px;
     background-color: #4A90E2;
     color: white;
     border: none;
     border-radius: 5px;
     cursor: pointer;
     width: 100%;
-    transition: background 0.3s;
+    transition: background-color .2s;
 }
 
 .todo-button:hover {
@@ -88,21 +96,17 @@
     width: 100%;
 }
 
+#taskList{
+    padding: 5px;
+}
 
-
-
-/* Webkit-based browsers (Chrome, Safari, Edge) */
+/* for scrollbar */
 ::-webkit-scrollbar {
     width: 5px;  /* Vertical scrollbar width */
     background-color: #ffffff;
+    cursor: pointer;
 }
 ::-webkit-scrollbar-thumb {
-    background-color: #ff6347;
+    background-color: #ffa797;
     border-radius: 15px;
 }
-
-/* Firefox */
-/* html {
-    scrollbar-width: thin; 
-    scrollbar-color: #ff6347 #f0f0f0;
-} */

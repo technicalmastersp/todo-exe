@@ -5,6 +5,7 @@ const fs = require("fs");
 let win;
 function createWindow() {
   win = new BrowserWindow({
+    title: "To Do",
     minWidth: 260,
     width: 280,
     height: 320,
@@ -18,7 +19,7 @@ function createWindow() {
     focusable: true,
     resizable: true,
     maximizable: false,
-    icon: path.join(__dirname, "icon.png"),
+    icon: path.join(__dirname, "./assets/fevicon/fevicon.png"),
   });
   
   win.setMenu(null); // Disable the default menu bar
